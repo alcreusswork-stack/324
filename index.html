@@ -1,0 +1,856 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>JPCスポーツ教室 浜松店</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
+
+<style>
+/*
+  Layout: Hero画像→キャッチ→強み→サービス→創業者→クチコミ→アクセス→CTA→フッター
+  Color: 元気・子ども向け。明るいオレンジ×ディープネイビー×クリーム
+  Type: Nunito（ディスプレイ）+ Noto Sans JP（本文）
+*/
+
+:root {
+  --bg: #FFFDF8;
+  --bg2: #FFF5E4;
+  --fg: #1A1A2E;
+  --fg2: #4A4A6A;
+  --accent: #FF6B2C;
+  --accent2: #FFB830;
+  --accent3: #2EC4B6;
+  --accent4: #E84393;
+  --card: #FFFFFF;
+  --border: #FFE0C8;
+  --star: #FFB830;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12112B;
+    --bg2: #1E1B3A;
+    --fg: #F5F0FF;
+    --fg2: #B0A8D0;
+    --accent: #FF8C52;
+    --accent2: #FFD060;
+    --accent3: #3DDDD2;
+    --accent4: #FF6BB5;
+    --card: #1E1B3A;
+    --border: #3A3060;
+    --star: #FFD060;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12112B;
+  --bg2: #1E1B3A;
+  --fg: #F5F0FF;
+  --fg2: #B0A8D0;
+  --accent: #FF8C52;
+  --accent2: #FFD060;
+  --accent3: #3DDDD2;
+  --accent4: #FF6BB5;
+  --card: #1E1B3A;
+  --border: #3A3060;
+  --star: #FFD060;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  padding-inline: 0;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* ── HEADER ── */
+.header {
+  background: var(--card);
+  border-bottom: 3px solid var(--accent2);
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.header-logo {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 1.25rem;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.header-logo a {
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.header-logo a:hover { opacity: 0.8; }
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+.header-sns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.sns-link {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+.sns-link:hover { transform: scale(1.15); }
+.sns-link.instagram {
+  background: radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  color: #fff;
+}
+
+/* ── HERO IMAGE ── */
+.hero-img-wrap {
+  width: 100%;
+  aspect-ratio: 16/7;
+  overflow: hidden;
+  background: linear-gradient(135deg, #FFE0C8 0%, #FFECD2 50%, #D4F5F2 100%);
+  position: relative;
+}
+.hero-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-img-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--accent);
+  font-size: 5rem;
+}
+.hero-img-placeholder p {
+  font-size: 1rem;
+  color: var(--fg2);
+}
+
+/* ── HERO TEXT ── */
+.hero-text {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+  padding: 40px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero-text::before {
+  content: '⚽🤸🏃';
+  position: absolute;
+  font-size: 6rem;
+  opacity: 0.08;
+  top: -10px;
+  left: -20px;
+  pointer-events: none;
+}
+.hero-text::after {
+  content: '🌟💪🎯';
+  position: absolute;
+  font-size: 6rem;
+  opacity: 0.08;
+  bottom: -10px;
+  right: -20px;
+  pointer-events: none;
+}
+.hero-eyebrow {
+  display: inline-block;
+  background: rgba(255,255,255,0.25);
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  padding: 4px 16px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+.hero-title {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  color: #fff;
+  line-height: 1.2;
+  text-wrap: balance;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+.hero-title span { display: block; }
+.hero-sub {
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  color: rgba(255,255,255,0.92);
+  max-width: 560px;
+  margin: 0 auto 28px;
+  line-height: 1.7;
+}
+.hero-cta-group {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 14px 28px;
+  border-radius: 999px;
+  transition: transform 0.18s, box-shadow 0.18s;
+  cursor: pointer;
+  border: none;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.18); }
+.btn-white {
+  background: #fff;
+  color: var(--accent);
+}
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 2.5px solid rgba(255,255,255,0.7);
+}
+
+/* ── SECTION WRAPPER ── */
+.section {
+  padding: 64px 24px;
+  max-width: 900px;
+  margin-inline: auto;
+}
+.section-eyebrow {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.section-title {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  color: var(--fg);
+  text-wrap: balance;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+.section-lead {
+  color: var(--fg2);
+  font-size: 1rem;
+  max-width: 560px;
+  margin-bottom: 40px;
+}
+
+/* ── STRENGTHS ── */
+.strengths-bg {
+  background: var(--bg2);
+}
+.strengths-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+.strength-card {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 28px 24px;
+  border: 2px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.strength-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+.strength-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+.strength-title {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 1.05rem;
+  color: var(--fg);
+}
+.strength-desc {
+  font-size: 0.92rem;
+  color: var(--fg2);
+  line-height: 1.6;
+}
+
+/* ── SERVICE / CLASSES ── */
+.classes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.class-item {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 22px 24px;
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.class-badge {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+.class-badge.c1 { background: #FFF0E6; }
+.class-badge.c2 { background: #E6F9F8; }
+.class-badge.c3 { background: #FFF0F8; }
+.class-badge.c4 { background: #FFF8E6; }
+.class-body { min-width: 0; }
+.class-name {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 1.05rem;
+  color: var(--fg);
+  margin-bottom: 4px;
+}
+.class-detail {
+  font-size: 0.9rem;
+  color: var(--fg2);
+}
+
+/* ── FEATURE HIGHLIGHT ── */
+.feature-highlight {
+  background: linear-gradient(135deg, #12112B 0%, #1E1450 100%);
+  padding: 64px 24px;
+}
+.feature-highlight .section {
+  padding: 0;
+}
+.feature-highlight .section-eyebrow { color: var(--accent2); }
+.feature-highlight .section-title { color: #fff; }
+.feature-highlight .section-lead { color: rgba(255,255,255,0.75); }
+.feature-box {
+  background: rgba(255,255,255,0.07);
+  border: 1.5px solid rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 28px 24px;
+  color: rgba(255,255,255,0.9);
+  font-size: 0.97rem;
+  line-height: 1.75;
+}
+.feature-box strong {
+  color: var(--accent2);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+}
+
+/* ── STORY ── */
+.story-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+@media (max-width: 600px) {
+  .story-wrap { grid-template-columns: 1fr; }
+}
+.story-visual {
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, var(--bg2) 0%, var(--border) 100%);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  border: 2px solid var(--border);
+}
+.story-text p {
+  font-size: 0.97rem;
+  color: var(--fg2);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+.story-name {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--accent);
+}
+
+/* ── REVIEWS ── */
+.reviews-bg {
+  background: var(--bg2);
+}
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.review-card {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 24px;
+  border: 2px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.review-stars {
+  color: var(--star);
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+.review-text {
+  font-size: 0.93rem;
+  color: var(--fg2);
+  line-height: 1.75;
+  flex: 1;
+}
+.review-footer {
+  font-size: 0.82rem;
+  color: var(--fg2);
+  opacity: 0.6;
+}
+
+/* ── COMING SOON ── */
+.coming-soon-box {
+  background: linear-gradient(135deg, var(--accent3) 0%, #2E9DB6 100%);
+  border-radius: 20px;
+  padding: 28px 24px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.coming-soon-box .icon { font-size: 2.8rem; flex-shrink: 0; }
+.coming-soon-box h3 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+.coming-soon-box p { font-size: 0.9rem; opacity: 0.9; }
+
+/* ── ACCESS ── */
+.access-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.access-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+.access-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.access-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.access-value {
+  font-size: 0.97rem;
+  color: var(--fg);
+}
+.map-wrap {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid var(--border);
+  aspect-ratio: 4/2.5;
+  background: var(--bg2);
+}
+.map-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+.map-btn-wrap {
+  text-align: center;
+  margin-top: 16px;
+}
+.btn-map {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent3);
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 0.97rem;
+  padding: 12px 28px;
+  border-radius: 999px;
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+.btn-map:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+
+/* ── CTA BANNER ── */
+.cta-banner {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent4) 100%);
+  padding: 64px 24px;
+  text-align: center;
+}
+.cta-banner h2 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  color: #fff;
+  text-wrap: balance;
+  margin-bottom: 12px;
+}
+.cta-banner p {
+  color: rgba(255,255,255,0.88);
+  font-size: 1rem;
+  margin-bottom: 28px;
+  max-width: 480px;
+  margin-inline: auto;
+  margin-bottom: 28px;
+}
+.contact-info-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+.phone-display {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 1.6rem;
+  color: #fff;
+  letter-spacing: 0.05em;
+  font-variant-numeric: tabular-nums;
+}
+.phone-note {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.75);
+}
+
+/* ── FOOTER ── */
+.footer {
+  background: #12112B;
+  color: rgba(255,255,255,0.65);
+  padding: 40px 24px 32px;
+  text-align: center;
+}
+.footer-logo {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.footer-address {
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  font-size: 0.88rem;
+}
+.footer-links a {
+  color: rgba(255,255,255,0.55);
+  transition: color 0.15s;
+}
+.footer-links a:hover { color: var(--accent2); }
+.footer-copy {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.3);
+}
+
+/* ── DIVIDER ── */
+.wave-divider {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+.wave-divider svg {
+  display: block;
+  width: 100%;
+}
+
+/* ── CHIPS / TAGS ── */
+.tag {
+  display: inline-block;
+  background: var(--bg2);
+  color: var(--accent);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+}
+
+@media (max-width: 480px) {
+  .hero-text { padding: 32px 16px; }
+  .section { padding: 48px 16px; }
+  .strength-card { padding: 20px; }
+  .class-item { flex-direction: column; gap: 10px; }
+  .review-card { padding: 20px; }
+  .coming-soon-box { flex-direction: column; gap: 12px; }
+  .access-info-grid { grid-template-columns: 1fr 1fr; }
+  .header { padding: 12px 16px; }
+  .header-logo { font-size: 1rem; }
+}
+</style>
+
+<!-- ── HEADER ── -->
+<header class="header">
+  <div class="header-logo">
+    <div class="logo-icon">J</div>
+    <a href="https://jpc-sports.com/hamamatsu/" target="_blank" rel="noopener">JPCスポーツ教室 浜松店</a>
+  </div>
+  <div class="header-sns">
+    <a href="https://www.instagram.com/jpc.hamamatsu/" target="_blank" rel="noopener" class="sns-link instagram" aria-label="Instagram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="20" height="20" rx="5.5" stroke="white" stroke-width="2"/>
+        <circle cx="12" cy="12" r="4.5" stroke="white" stroke-width="2"/>
+        <circle cx="17.5" cy="6.5" r="1.2" fill="white"/>
+      </svg>
+    </a>
+  </div>
+</header>
+
+<!-- ── HERO IMAGE ── -->
+<div class="hero-img-wrap">
+  <img src="images/hero324.png" alt="JPCスポーツ教室 浜松店 - 子どもたちが楽しく体を動かす教室">
+</div>
+
+<!-- ── HERO TEXT ── -->
+<section class="hero-text">
+  <div class="hero-eyebrow">🌟 JPCスポーツ教室 浜松店</div>
+  <h1 class="hero-title">
+    <span>からだを動かす楽しさを、</span>
+    <span>一生の力に。</span>
+  </h1>
+  <p class="hero-sub">
+    「遊び」を通じた体幹トレーニングで、子どもたちの可能性を広げます。3歳から通えるスポーツ教室です。
+  </p>
+  <div class="hero-cta-group">
+    <a href="https://jpc-sports.com/hamamatsu/contact/" target="_blank" rel="noopener" class="btn btn-white">🎉 無料体験に申し込む</a>
+    <a href="https://jpc-sports.com/hamamatsu/" target="_blank" rel="noopener" class="btn btn-outline">公式サイトを見る</a>
+  </div>
+</section>
+
+<!-- ── STRENGTHS ── -->
+<div class="strengths-bg">
+  <section class="section">
+    <p class="section-eyebrow">✨ JPCの3つの特長</p>
+    <h2 class="section-title">子どもが「できた！」を<br>体験できる場所</h2>
+    <p class="section-lead">運動が苦手な子でも大丈夫。一人ひとりに合わせた丁寧な指導で、自信と笑顔を育てます。</p>
+    <div class="strengths-grid">
+      <div class="strength-card">
+        <div class="strength-icon">🤸</div>
+        <div class="strength-title">体幹トレーニング</div>
+        <p class="strength-desc">遊びの要素を取り入れながら、一生の財産となる正しい姿勢と体幹を鍛えます。</p>
+      </div>
+      <div class="strength-card">
+        <div class="strength-icon">💬</div>
+        <div class="strength-title">丁寧な個別サポート</div>
+        <p class="strength-desc">一人ひとりのレベルに合わせた指導で、運動が苦手なお子さまも、基本動作から少しずつ挑戦できる環境を目指しています。</p>
+      </div>
+      <div class="strength-card">
+        <div class="strength-icon">🏟️</div>
+        <div class="strength-title">充実した施設</div>
+        <p class="strength-desc">人工芝を敷き詰めた開放的な空間で、天候に関係なく思い切り体を動かせます。</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ── FEATURE HIGHLIGHT ── -->
+<div class="feature-highlight">
+  <section class="section" style="padding:64px 0;">
+    <div style="max-width:900px;margin-inline:auto;padding-inline:24px;">
+      <p class="section-eyebrow">⭐ イチオシメソッド</p>
+      <h2 class="section-title" style="color:#fff;">KOBA式体幹バランス<br>トレーニング</h2>
+      <p class="section-lead">プロトレーナー木場克己氏が開発した独自メソッドで、怪我をしにくい体づくりとパフォーマンス向上を目指します。</p>
+      <div class="feature-box">
+        <p>🎮 <strong>「遊び」を通じた楽しい指導</strong> — 模倣遊びやゲーム要素を取り入れることで、運動が苦手な子供でも自然に体幹や基礎能力を身に付けられるよう工夫されています。</p>
+        <br>
+        <p>👀 <strong>子どもの目線に立った指導</strong> — 上から押さえつける指導ではなく、子供の「きっかけ」を引き出すサポートを大切にしています。成長のペースに合わせて丁寧にサポートします。</p>
+        <br>
+        <p>🎯 <strong>目的に合わせたクラス編成</strong> — 体操体幹トレーニング、競技力向上クラス、さらに大人向けの健康体幹クラスまで、幅広いニーズに対応しています。</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ── CLASSES ── -->
+<section class="section">
+  <p class="section-eyebrow">📋 クラス一覧</p>
+  <h2 class="section-title">3歳から大人まで<br>幅広いクラスをご用意</h2>
+  <p class="section-lead">お子さまの年齢や目的に合わせてクラスをお選びいただけます。</p>
+  <div class="classes-list">
+    <div class="class-item">
+      <div class="class-badge c1">🤸</div>
+      <div class="class-body">
+        <div class="class-name">体操体幹トレーニングクラス</div>
+        <p class="class-detail">3歳から通える基礎クラス。鉄棒・跳び箱・マット・縄跳びなど、楽しく体を動かしながら基礎体力を育てます。</p>
+      </div>
+    </div>
+    <div class="class-item">
+      <div class="class-badge c2">💪</div>
+      <div class="class-body">
+        <div class="class-name">体幹トレーニングクラス</div>
+        <p class="class-detail">競技力向上を目指す子どものためのクラス。KOBA式体幹トレーニングで運動能力をさらに高めます。</p>
+      </div>
+    </div>
+    <div class="class-item">
+      <div class="class-badge c3">🧘</div>
+      <div class="class-body">
+        <div class="class-name">健康体幹クラス（大人向け）</div>
+        <p class="class-detail">大人のための体幹トレーニング。日常の姿勢改善や健康維持を目指す方におすすめです。</p>
+      </div>
+    </div>
+    <div class="class-item">
+      <div class="class-badge c4">🥗</div>
+      <div class="class-body">
+        <div class="class-name">栄養・食事指導（準備中）</div>
+        <p class="class-detail">子どもの体づくりを食から支援するサービスを準備中です。栄養バランスから成長をサポートします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOUNDER STORY ── -->
+<div class="strengths-bg">
+  <section class="section">
+    <p class="section-eyebrow">📖 創業者ストーリー</p>
+    <h2 class="section-title">4児の父が作った、<br>子どもたちのための教室</h2>
+    <div class="story-wrap">
+      <div class="story-visual">👨‍👧‍👦</div>
+      <div class="story-text">
+        <p>株式会社J-PRoach代表取締役の髙木宏昌が、4児の父親として「子ども達が楽しみながら成長できる空間を構築したい」という思いからJPCスポーツ教室を創業しました。</p>
+        <p>子ども自身が成長を掴み取れる環境づくりを大切にし、「遊び」を通して体を動かしながら、考える力やコミュニケーション力を育むことを目指しています。</p>
+        <p>岐阜県羽島市から始まった取り組みは、現在全国へと広がっています。</p>
+        <div class="story-name">髙木 宏昌（代表取締役）</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ── REVIEWS ── -->
+<div class="reviews-bg">
+  <section class="section">
+    <p class="section-eyebrow">💬 お客様の声</p>
+    <h2 class="section-title">通わせて本当に良かった！</h2>
+    <p class="section-lead">保護者の皆様からいただいた声をご紹介します。</p>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">年中の娘を通わせています。コーチの子供達への気持ちの乗せ方がとても上手で、楽しそうに通っています。料金も良心的です。土曜日に通っているので、年少〜小学生まで幅広いですが、年齢やできることによってスペースを区切って教えてくれるのでありがたいです。振替も自由がきくので大変助かっています。今後もよろしくお願いします☺︎</p>
+        <div class="review-footer">保護者の方より</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">年中の娘を通わせています。鉄棒、跳び箱、マット、縄跳び等出来ることがどんどん増え、自信に繋がっているようです。走るのも早くなり、今では私でも追いつけません(笑)コーチの皆さんが優しく丁寧に楽しく教えてくれるので、通うのが楽しいようです。今後も楽しく通ってくれたら良いなと思います。</p>
+        <div class="review-footer">保護者の方より</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ── ACCESS ── -->
+<section class="section">
+  <p class="section-eyebrow">📍 アクセス</p>
+  <h2 class="section-title">浜松市中央区で<br>お待ちしています</h2>
+  <div class="access-wrap">
+    <div class="access-info-grid">
+      <div class="access-info-item">
+        <span class="access-label">住所</span>
+        <span class="access-value">〒435-0048<br>静岡県浜松市中央区<br>上西町1020−33</span>
+      </div>
+      <div class="access-info-item">
+        <span class="access-label">電話番号</span>
+        <span class="access-value">053-569-0079</span>
+      </div>
+      <div class="access-info-item">
+        <span class="access-label">休校日</span>
+        <span class="access-value">日曜・祝日<br>（祝日営業日あり）</span>
+      </div>
+    </div>
+    <div class="map-wrap">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3279.1949056320937!2d137.7637528!3d34.7254812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601ae12649964d7d%3A0xfa1b9deced031867!2zSlBD44K544Od44O844OE5pWZ5a6kIOa1nOadvuW6lw!5e0!3m2!1sja!2sjp!4v1791864942943!5m2!1sja!2sjp" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="JPCスポーツ教室 浜松店 地図"></iframe>
+    </div>
+    <div class="map-btn-wrap">
+      <a href="https://www.google.com/maps/place/JPC%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E6%95%99%E5%AE%A4+%E6%B5%9C%E6%9D%BE%E5%BA%97/@34.7254812,137.7637528,17z/data=!3m2!4b1!5s0x601ae0a75da7f51f:0xa8c856e01b69aae!4m6!3m5!1s0x601ae12649964d7d:0xfa1b9deced031867!8m2!3d34.7254812!4d137.7637528!16s%2Fg%2F11vb0sry7h?authuser=0&entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" class="btn-map">
+        🗺️ Googleマップで見る
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BANNER ── -->
+<div class="cta-banner">
+  <h2>まずは無料体験から<br>始めてみませんか？</h2>
+  <p>お子さまのペースに合わせてご案内します。<br>お気軽にお申し込みください。</p>
+  <a href="https://jpc-sports.com/hamamatsu/contact/" target="_blank" rel="noopener" class="btn btn-white" style="font-size:1.05rem;padding:16px 36px;">
+    🎉 無料体験に申し込む
+  </a>
+  <div class="contact-info-row">
+    <span class="phone-note">お電話でのお問い合わせ</span>
+    <span class="phone-display">053-569-0079</span>
+    <span class="phone-note">（日曜・祝日休み）</span>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-logo">JPCスポーツ教室 浜松店</div>
+  <p class="footer-address">〒435-0048 静岡県浜松市中央区上西町1020−33<br>運営：株式会社J-PRoach</p>
+  <div class="footer-links">
+    <a href="https://jpc-sports.com/hamamatsu/" target="_blank" rel="noopener">公式サイト</a>
+    <a href="https://jpc-sports.com/hamamatsu/contact/" target="_blank" rel="noopener">無料体験申し込み</a>
+    <a href="https://www.instagram.com/jpc.hamamatsu/" target="_blank" rel="noopener">Instagram</a>
+  </div>
+  <p class="footer-copy">© 2024 株式会社J-PRoach. All rights reserved.</p>
+</footer>
+
+</body></html>
